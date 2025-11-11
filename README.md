@@ -1,4 +1,4 @@
-# Analisador Léxico em Python
+# Analisador Léxico e Sintático em Python
 
 Este projeto implementa um **analisador léxico manual** em Python, sem uso de ferramentas automáticas (como Lex ou PLY).
 O analisador percorre o código fonte caractere por caractere e gera **tokens** de acordo com regras definidas.
