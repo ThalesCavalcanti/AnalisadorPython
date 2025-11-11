@@ -100,7 +100,7 @@ Token('EOF', None, line=7, col=15)
 ## Requisitos
 
 * Python 3.7 ou superior
-* Nenhuma dependência externa além da biblioteca padrão
+* graphviz (pip install graphviz || sudo apt install graphviz)
 
 ## Membros
 

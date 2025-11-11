@@ -1,0 +1,425 @@
+// Árvore Sintática
+digraph {
+	node [color=lightgrey fontname=Arial shape=ellipse style=filled]
+	0 [label=Programa]
+	1 [label="INICIO(INICIO)"]
+	0 -> 1
+	2 [label="DECLS(DECLS)"]
+	0 -> 2
+	3 [label=Decls]
+	0 -> 3
+	4 [label=Decl]
+	3 -> 4
+	5 [label="IDENTIFIER(num1)"]
+	4 -> 5
+	6 [label="COLON(:)"]
+	4 -> 6
+	7 [label="INT(INT)"]
+	4 -> 7
+	8 [label=Decl]
+	3 -> 8
+	9 [label="IDENTIFIER(num2)"]
+	8 -> 9
+	10 [label="COLON(:)"]
+	8 -> 10
+	11 [label="INT(INT)"]
+	8 -> 11
+	12 [label=Decl]
+	3 -> 12
+	13 [label="IDENTIFIER(num3)"]
+	12 -> 13
+	14 [label="COLON(:)"]
+	12 -> 14
+	15 [label="INT(INT)"]
+	12 -> 15
+	16 [label=Decl]
+	3 -> 16
+	17 [label="IDENTIFIER(aux)"]
+	16 -> 17
+	18 [label="COLON(:)"]
+	16 -> 18
+	19 [label="INT(INT)"]
+	16 -> 19
+	20 [label="FIMDECLS(FIMDECLS)"]
+	0 -> 20
+	21 [label="CODIGO(CODIGO)"]
+	0 -> 21
+	22 [label=Comandos]
+	0 -> 22
+	23 [label=Comando]
+	22 -> 23
+	24 [label="LEIA(LEIA)"]
+	23 -> 24
+	25 [label="IDENTIFIER(num1)"]
+	23 -> 25
+	26 [label=Comando]
+	22 -> 26
+	27 [label="LEIA(LEIA)"]
+	26 -> 27
+	28 [label="IDENTIFIER(num2)"]
+	26 -> 28
+	29 [label=Comando]
+	22 -> 29
+	30 [label="LEIA(LEIA)"]
+	29 -> 30
+	31 [label="IDENTIFIER(num3)"]
+	29 -> 31
+	32 [label=Comando]
+	22 -> 32
+	33 [label=Condicional]
+	32 -> 33
+	34 [label="SE(SE)"]
+	33 -> 34
+	35 [label=ExpressaoLogica]
+	33 -> 35
+	36 [label=ExpressaoRelacional]
+	35 -> 36
+	37 [label=">"]
+	36 -> 37
+	38 [label=ExpressaoAritmetica]
+	37 -> 38
+	39 [label=Termo]
+	38 -> 39
+	40 [label="IDENTIFIER(num1)"]
+	39 -> 40
+	41 [label=ExpressaoAritmetica]
+	37 -> 41
+	42 [label=Termo]
+	41 -> 42
+	43 [label="IDENTIFIER(num2)"]
+	42 -> 43
+	44 [label="ENTAO(ENTAO)"]
+	33 -> 44
+	45 [label="BLOCO(BLOCO)"]
+	33 -> 45
+	46 [label=Comandos]
+	33 -> 46
+	47 [label=Comando]
+	46 -> 47
+	48 [label=Atribuicao]
+	47 -> 48
+	49 [label="IDENTIFIER(aux)"]
+	48 -> 49
+	50 [label="ASSIGN(=)"]
+	48 -> 50
+	51 [label=ExpressaoLogica]
+	48 -> 51
+	52 [label=ExpressaoRelacional]
+	51 -> 52
+	53 [label=ExpressaoAritmetica]
+	52 -> 53
+	54 [label=Termo]
+	53 -> 54
+	55 [label="IDENTIFIER(num2)"]
+	54 -> 55
+	56 [label=Comando]
+	46 -> 56
+	57 [label=Atribuicao]
+	56 -> 57
+	58 [label="IDENTIFIER(num2)"]
+	57 -> 58
+	59 [label="ASSIGN(=)"]
+	57 -> 59
+	60 [label=ExpressaoLogica]
+	57 -> 60
+	61 [label=ExpressaoRelacional]
+	60 -> 61
+	62 [label=ExpressaoAritmetica]
+	61 -> 62
+	63 [label=Termo]
+	62 -> 63
+	64 [label="IDENTIFIER(num1)"]
+	63 -> 64
+	65 [label=Comando]
+	46 -> 65
+	66 [label=Atribuicao]
+	65 -> 66
+	67 [label="IDENTIFIER(num1)"]
+	66 -> 67
+	68 [label="ASSIGN(=)"]
+	66 -> 68
+	69 [label=ExpressaoLogica]
+	66 -> 69
+	70 [label=ExpressaoRelacional]
+	69 -> 70
+	71 [label=ExpressaoAritmetica]
+	70 -> 71
+	72 [label=Termo]
+	71 -> 72
+	73 [label="IDENTIFIER(aux)"]
+	72 -> 73
+	74 [label="FIMBLOCO(FIMBLOCO)"]
+	33 -> 74
+	75 [label=Comando]
+	22 -> 75
+	76 [label=Condicional]
+	75 -> 76
+	77 [label="SE(SE)"]
+	76 -> 77
+	78 [label=ExpressaoLogica]
+	76 -> 78
+	79 [label=OU]
+	78 -> 79
+	80 [label=E]
+	79 -> 80
+	81 [label=E]
+	80 -> 81
+	82 [label=ExpressaoRelacional]
+	81 -> 82
+	83 [label=">"]
+	82 -> 83
+	84 [label=ExpressaoAritmetica]
+	83 -> 84
+	85 [label=Termo]
+	84 -> 85
+	86 [label="IDENTIFIER(num1)"]
+	85 -> 86
+	87 [label=ExpressaoAritmetica]
+	83 -> 87
+	88 [label=Termo]
+	87 -> 88
+	89 [label="IDENTIFIER(num3)"]
+	88 -> 89
+	90 [label=ExpressaoRelacional]
+	81 -> 90
+	91 [label="<="]
+	90 -> 91
+	92 [label=ExpressaoAritmetica]
+	91 -> 92
+	93 [label=Termo]
+	92 -> 93
+	94 [label="IDENTIFIER(num2)"]
+	93 -> 94
+	95 [label=ExpressaoAritmetica]
+	91 -> 95
+	96 [label=Termo]
+	95 -> 96
+	97 [label="IDENTIFIER(num3)"]
+	96 -> 97
+	98 [label=ExpressaoRelacional]
+	80 -> 98
+	99 [label=">"]
+	98 -> 99
+	100 [label=ExpressaoAritmetica]
+	99 -> 100
+	101 [label=Termo]
+	100 -> 101
+	102 [label="IDENTIFIER(num1)"]
+	101 -> 102
+	103 [label=ExpressaoAritmetica]
+	99 -> 103
+	104 [label=Termo]
+	103 -> 104
+	105 [label="NUMBER(3)"]
+	104 -> 105
+	106 [label=ExpressaoRelacional]
+	79 -> 106
+	107 [label="!="]
+	106 -> 107
+	108 [label=ExpressaoAritmetica]
+	107 -> 108
+	109 [label=Termo]
+	108 -> 109
+	110 [label="IDENTIFIER(num2)"]
+	109 -> 110
+	111 [label=ExpressaoAritmetica]
+	107 -> 111
+	112 [label=Termo]
+	111 -> 112
+	113 [label="IDENTIFIER(num3)"]
+	112 -> 113
+	114 [label="ENTAO(ENTAO)"]
+	76 -> 114
+	115 [label="BLOCO(BLOCO)"]
+	76 -> 115
+	116 [label=Comandos]
+	76 -> 116
+	117 [label=Comando]
+	116 -> 117
+	118 [label=Atribuicao]
+	117 -> 118
+	119 [label="IDENTIFIER(aux)"]
+	118 -> 119
+	120 [label="ASSIGN(=)"]
+	118 -> 120
+	121 [label=ExpressaoLogica]
+	118 -> 121
+	122 [label=ExpressaoRelacional]
+	121 -> 122
+	123 [label=ExpressaoAritmetica]
+	122 -> 123
+	124 [label=Termo]
+	123 -> 124
+	125 [label=Group]
+	124 -> 125
+	126 [label="LPAREN(()"]
+	125 -> 126
+	127 [label=ExpressaoLogica]
+	125 -> 127
+	128 [label=ExpressaoRelacional]
+	127 -> 128
+	129 [label=ExpressaoAritmetica]
+	128 -> 129
+	130 [label=Termo]
+	129 -> 130
+	131 [label="IDENTIFIER(num3)"]
+	130 -> 131
+	132 [label="RPAREN())"]
+	125 -> 132
+	133 [label=Comando]
+	116 -> 133
+	134 [label=Atribuicao]
+	133 -> 134
+	135 [label="IDENTIFIER(num3)"]
+	134 -> 135
+	136 [label="ASSIGN(=)"]
+	134 -> 136
+	137 [label=ExpressaoLogica]
+	134 -> 137
+	138 [label=ExpressaoRelacional]
+	137 -> 138
+	139 [label=ExpressaoAritmetica]
+	138 -> 139
+	140 [label=Termo]
+	139 -> 140
+	141 [label="IDENTIFIER(num1)"]
+	140 -> 141
+	142 [label=Comando]
+	116 -> 142
+	143 [label=Atribuicao]
+	142 -> 143
+	144 [label="IDENTIFIER(num1)"]
+	143 -> 144
+	145 [label="ASSIGN(=)"]
+	143 -> 145
+	146 [label=ExpressaoLogica]
+	143 -> 146
+	147 [label=ExpressaoRelacional]
+	146 -> 147
+	148 [label=ExpressaoAritmetica]
+	147 -> 148
+	149 [label=Termo]
+	148 -> 149
+	150 [label="IDENTIFIER(aux)"]
+	149 -> 150
+	151 [label="FIMBLOCO(FIMBLOCO)"]
+	76 -> 151
+	152 [label=Comando]
+	22 -> 152
+	153 [label=Condicional]
+	152 -> 153
+	154 [label="SE(SE)"]
+	153 -> 154
+	155 [label=ExpressaoLogica]
+	153 -> 155
+	156 [label=ExpressaoRelacional]
+	155 -> 156
+	157 [label=">"]
+	156 -> 157
+	158 [label=ExpressaoAritmetica]
+	157 -> 158
+	159 [label=Termo]
+	158 -> 159
+	160 [label="IDENTIFIER(num2)"]
+	159 -> 160
+	161 [label=ExpressaoAritmetica]
+	157 -> 161
+	162 [label=Termo]
+	161 -> 162
+	163 [label="IDENTIFIER(num3)"]
+	162 -> 163
+	164 [label="ENTAO(ENTAO)"]
+	153 -> 164
+	165 [label="BLOCO(BLOCO)"]
+	153 -> 165
+	166 [label=Comandos]
+	153 -> 166
+	167 [label=Comando]
+	166 -> 167
+	168 [label=Atribuicao]
+	167 -> 168
+	169 [label="IDENTIFIER(aux)"]
+	168 -> 169
+	170 [label="ASSIGN(=)"]
+	168 -> 170
+	171 [label=ExpressaoLogica]
+	168 -> 171
+	172 [label=ExpressaoRelacional]
+	171 -> 172
+	173 [label=ExpressaoAritmetica]
+	172 -> 173
+	174 [label=Termo]
+	173 -> 174
+	175 [label="IDENTIFIER(num3)"]
+	174 -> 175
+	176 [label=Comando]
+	166 -> 176
+	177 [label=Atribuicao]
+	176 -> 177
+	178 [label="IDENTIFIER(num3)"]
+	177 -> 178
+	179 [label="ASSIGN(=)"]
+	177 -> 179
+	180 [label=ExpressaoLogica]
+	177 -> 180
+	181 [label=ExpressaoRelacional]
+	180 -> 181
+	182 [label=ExpressaoAritmetica]
+	181 -> 182
+	183 [label=Termo]
+	182 -> 183
+	184 [label="IDENTIFIER(num2)"]
+	183 -> 184
+	185 [label=Comando]
+	166 -> 185
+	186 [label=Atribuicao]
+	185 -> 186
+	187 [label="IDENTIFIER(num2)"]
+	186 -> 187
+	188 [label="ASSIGN(=)"]
+	186 -> 188
+	189 [label=ExpressaoLogica]
+	186 -> 189
+	190 [label=ExpressaoRelacional]
+	189 -> 190
+	191 [label=ExpressaoAritmetica]
+	190 -> 191
+	192 [label=Termo]
+	191 -> 192
+	193 [label="IDENTIFIER(aux)"]
+	192 -> 193
+	194 [label="FIMBLOCO(FIMBLOCO)"]
+	153 -> 194
+	195 [label=Comando]
+	22 -> 195
+	196 [label="ESCREVA(ESCREVA)"]
+	195 -> 196
+	197 [label="LPAREN(()"]
+	195 -> 197
+	198 [label="IDENTIFIER(num1)"]
+	195 -> 198
+	199 [label="RPAREN())"]
+	195 -> 199
+	200 [label=Comando]
+	22 -> 200
+	201 [label="ESCREVA(ESCREVA)"]
+	200 -> 201
+	202 [label="LPAREN(()"]
+	200 -> 202
+	203 [label="IDENTIFIER(num2)"]
+	200 -> 203
+	204 [label="RPAREN())"]
+	200 -> 204
+	205 [label=Comando]
+	22 -> 205
+	206 [label="ESCREVA(ESCREVA)"]
+	205 -> 206
+	207 [label="LPAREN(()"]
+	205 -> 207
+	208 [label="IDENTIFIER(num3)"]
+	205 -> 208
+	209 [label="RPAREN())"]
+	205 -> 209
+	210 [label="FIMPROG(FIMPROG)"]
+	0 -> 210
+}

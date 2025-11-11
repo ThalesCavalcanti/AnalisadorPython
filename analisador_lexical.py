@@ -33,14 +33,39 @@ class Token:
 
 class Lexer:
     # tabela de palavras reservadas
+    # tabela de palavras reservadas
     RESERVED = {
+        # tipos
         'int': 'INT',
         'float': 'FLOAT',
+
+        # comandos e estruturas do programa
+        'inicio': 'INICIO',
+        'decls': 'DECLS',
+        'fimdecls': 'FIMDECLS',
+        'codigo': 'CODIGO',
+        'fimprog': 'FIMPROG',
+
+        # entrada e saída
+        'leia': 'LEIA',
+        'escreva': 'ESCREVA',
+
+        # controle de fluxo
+        'se': 'SE',
+        'entao': 'ENTAO',
+        'bloco': 'BLOCO',
+        'fimbloco': 'FIMBLOCO',
+
+        # operadores lógicos
+        'e': 'E',
+        'ou': 'OU',
+
+        # funções e outras palavras (opcional)
         'print': 'PRINT',
-        'if': 'IF',
-        'else': 'ELSE',
-        'while' : 'WHILE'
+        'while': 'WHILE',
+        'else': 'ELSE'
     }
+
 
     def __init__(self, text: str):
         # normaliza quebras de linha para facilitar contagem
@@ -145,8 +170,9 @@ class Lexer:
         while self.current_char is not None and (self.current_char in string.ascii_letters or self.current_char == '_' or ('0' <= self.current_char <= '9')):
             result += self.current_char
             self.advance()
-        typ = self.RESERVED.get(result, 'IDENTIFIER')
+        typ = self.RESERVED.get(result.lower(), 'IDENTIFIER') 
         return Token(typ, result, start_line, start_col)
+
 
     def get_next_token(self) -> Token:
         while self.current_char is not None:
@@ -231,6 +257,11 @@ class Lexer:
             # identificadores / palavras reservadas
             if self.current_char in string.ascii_letters or self.current_char == '_':
                 return self.identifier_or_keyword()
+            # dois pontos usados em indetificadores
+            if self.current_char == ':':
+                t = Token('COLON', ':', self.line, self.col)
+                self.advance()
+                return t
             # caractere inválido
             self.error("Invalid character", self.current_char, self.line, self.col)
         return Token('EOF', None, self.line, self.col)

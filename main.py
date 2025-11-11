@@ -1,7 +1,8 @@
 from analisador_lexical import Lexer, LexicalError
+from analisador_sintatico import Parser, SyntaxError_
 
 def main():
-    filename = "programa.mc"  # Change to your .mc file name
+    filename = "programa.mc"
     try:
         with open(filename, "r", encoding="utf-8") as f:
             src = f.read()
@@ -9,13 +10,14 @@ def main():
         print(f"Arquivo '{filename}' não encontrado.")
         return
 
-    lex = Lexer(src)
     try:
-        tokens = lex.tokenize()
-        for t in tokens:
-            print(t)
+        lexer = Lexer(src)
+        parser = Parser(lexer)
+        parser.parse_programa()
     except LexicalError as e:
         print(f"Erro léxico: {e}")
+    except SyntaxError_ as e:
+        print(f"{e}")
 
 if __name__ == "__main__":
     main()
